@@ -1,0 +1,48 @@
+{
+  "name": "zenzo-forge",
+  "productName": "ZENZO Forge",
+  "version": "2.0.0",
+  "description": "The ZENZO Forge GUI",
+  "homepage": "https://zenzo.io/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZENZO-Ecosystem/zenzo-forge-v2.git"
+  },
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "run-script-os",
+    "make:linux": "npm run package && better-electron-installer-debian --src out/$npm_package_name-linux-x64 --dest out/make/deb --arch amd64 --config build-confs/deb.json",
+    "make:default": "electron-forge make",
+    "lint": "node linter"
+  },
+  "author": "JSKitty",
+  "license": "MPL-2.0",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "better-electron-installer-debian": "^3.2.1",
+    "electron": "^8.0.3",
+    "electron-reloader": "^1.2.0",
+    "eslint": "^7.29.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "run-script-os": "^1.1.6"
+  },
+  "dependencies": {
+    "@jskitty/bitcoin-rpc": "^1.0.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "otplib": "^12.0.1",
+    "regedit": "^3.0.3"
+  },
+  "config": {
+    "forge": "forge.config.js"
+  }
+}
